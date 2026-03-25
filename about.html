@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcel Luengas - Acerca de mí</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Meow+Script&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="CSS/about.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR (mismo que index.html) -->
+    <header class="navbar">
+        <div class="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo png blanco.png" alt="Marcel Luengas">
+            </a>
+        </div>
+        <nav class="nav-menu">
+            <div class="nav-columna">
+                <ul class="nav-links">
+                    <li style="--i:0">
+                        <a href="index.html" class="nav-item">Inicio</a>
+                    </li>
+                    <li style="--i:1">
+                        <a href="about.html" class="nav-item active">Acerca de</a>
+                    </li>
+                    <li style="--i:2">
+                        <a href="contacto.html" class="nav-item">Contacto</a>
+                    </li>
+                    <li style="--i:3">
+                        <a href="#" class="nav-item">Tienda</a>
+                    </li>
+                </ul>
+                <div class="menu-footer">
+                    <div class="menu-social">
+                        <a href="https://www.instagram.com/photoarchmarcel" target="_blank">Instagram</a>
+                        <a href="https://wa.me/573115912928" target="_blank">WhatsApp</a>
+                        <a href="mailto:photoarchmarcel@gmail.com">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-carrusel">
+                <div class="carrusel-track" id="carruselTrack">
+                    <div class="carrusel-item" data-categoria="deportes">
+                        <img src="Img/Narrativa Deportiva.jpg" alt="Narrativa Deportiva">
+                        <div class="item-overlay">Narrativa Deportiva</div>
+                    </div>
+                    <div class="carrusel-item" data-categoria="mascotas">
+                        <img src="Img/Compañeros de Vida.jpg" alt="Compañeros de Vida">
+                        <div class="item-overlay">Compañeros de Vida</div>
+                    </div>
+                    <div class="carrusel-item" data-categoria="espacios">
+                        <img src="Img/Espacios y ciudad.jpg" alt="Espacios y Ciudad">
+                        <div class="item-overlay">Espacios y Ciudad</div>
+                    </div>
+                    <div class="carrusel-item" data-categoria="retratos">
+                        <img src="Img/Retrato.jpg" alt="Retratos">
+                        <div class="item-overlay">Retratos</div>
+                    </div>
+                    <div class="carrusel-item" data-categoria="natural">
+                        <img src="Img/Vida Natural.jpg" alt="Vida Natural">
+                        <div class="item-overlay">Vida Natural</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero about-hero"></section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <section class="about-container">
+        <div class="about-logo">
+            <img src="Img/logo marcel negro.png" alt="Marcel Luengas Logo">
+        </div>
+        <div class="about-texto">
+            <h2>Mi mirada</h2>
+            <p>Arquitectura y fotografía como un mismo lenguaje.</p>
+            <p>Me interesa cómo la luz transforma el espacio y cómo el tiempo modifica la percepción.</p>
+            <p>Trabajo desde la composición, desde la atmósfera, desde lo esencial.</p>
+            <p><strong>Marcel Luengas</strong><br>Si mi mirada conecta contigo, conversemos.</p>
+            <a href="contacto.html" class="btn-contacto">Contáctame</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-contenido">
+            <div class="footer-copyright">
+                <p>© 2025 Marcel Luengas Photo</p>
+            </div>
+            <div class="footer-redes">
+                <a href="https://www.instagram.com/photoarchmarcel" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/573115912928" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:photoarchmarcel@gmail.com" aria-label="Email">
+                    <i class="far fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

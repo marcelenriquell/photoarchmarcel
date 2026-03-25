@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcel Luengas - Contacto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Meow+Script&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="CSS/contacto.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR (mismo que index.html) -->
+    <header class="navbar">
+        <div class="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo png blanco.png" alt="Marcel Luengas">
+            </a>
+        </div>
+        <nav class="nav-menu">
+            <div class="nav-columna">
+                <ul class="nav-links">
+                    <li style="--i:0">
+                        <a href="index.html" class="nav-item">Inicio</a>
+                    </li>
+                    <li style="--i:1">
+                        <a href="about.html" class="nav-item">Acerca de</a>
+                    </li>
+                    <li style="--i:2">
+                        <a href="contacto.html" class="nav-item active">Contacto</a>
+                    </li>
+                    <li style="--i:3">
+                        <a href="#" class="nav-item">Tienda</a>
+                    </li>
+                </ul>
+                <div class="menu-footer">
+                    <div class="menu-social">
+                        <a href="https://www.instagram.com/photoarchmarcel" target="_blank">Instagram</a>
+                        <a href="https://wa.me/573115912928" target="_blank">WhatsApp</a>
+                        <a href="mailto:photoarchmarcel@gmail.com">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-carrusel">
+                <div class="carrusel-track" id="carruselTrack">
+                    <div class="carrusel-item" data-categoria="deportes">
+                        <img src="Img/Narrativa Deportiva.jpg" alt="Narrativa Deportiva">
+                        <div class="item-overlay">Narrativa Deportiva</div>
+                    </div>
+                    <div class="carrusel-item" data-categoria="mascotas">
+                        <img src="Img/Compañeros de Vida.jpg" alt="Compañeros de Vida">
+                        <div class="item-overlay">Compañeros de Vida</div>
+                    </div>
+                    <div class="carrusel-item" data-categoria="espacios">
+                        <img src="Img/Espacios y ciudad.jpg" alt="Espacios y Ciudad">
+                        <div class="item-overlay">Espacios y Ciudad</div>
+                    </div>
+                    <div class="carrusel-item" data-categoria="retratos">
+                        <img src="Img/Retrato.jpg" alt="Retratos">
+                        <div class="item-overlay">Retratos</div>
+                    </div>
+                    <div class="carrusel-item" data-categoria="natural">
+                        <img src="Img/Vida Natural.jpg" alt="Vida Natural">
+                        <div class="item-overlay">Vida Natural</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO CON SLIDESHOW -->
+    <section class="hero slideshow-hero">
+        <div class="slideshow-container">
+            <div class="slide active" style="background-image: url('/Img/P1.jpg');"></div>
+            <div class="slide" style="background-image: url('/Img/P2.jpg');"></div>
+            <div class="slide" style="background-image: url('/Img/P3.jpg');"></div>
+            <div class="slide" style="background-image: url('/Img/P4.jpg');"></div>
+            <div class="slide" style="background-image: url('/Img/P5.jpg');"></div>
+            <div class="slide" style="background-image: url('/Img/P6.jpg');"></div>
+            <div class="slide" style="background-image: url('/Img/P7.jpg');"></div>
+            <div class="slide" style="background-image: url('/Img/P8.jpg');"></div>
+            <div class="slide" style="background-image: url('/Img/P9.jpg');"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-texto">
+            <h1>Contacto</h1>
+            <p>Si mi mirada conecta contigo, conversemos</p>
+        </div>
+    </section>
+
+    <!-- CONTENIDO DE CONTACTO -->
+    <section class="contacto-container">
+        <div class="contacto-info">
+            <h2>Hablemos</h2>
+            <p>Estoy disponible para proyectos editoriales, retratos, fotografía de arquitectura y colaboraciones creativas.</p>
+            
+            <div class="contacto-detalles">
+                <div class="contacto-item">
+                    <i class="far fa-envelope"></i>
+                    <a href="mailto:photoarchmarcel@gmail.com">photoarchmarcel@gmail.com</a>
+                </div>
+                <div class="contacto-item">
+                    <i class="fab fa-instagram"></i>
+                    <a href="#">@photoarchmarcel</a>
+                </div>
+                <div class="contacto-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>+573115912928</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contacto-formulario">
+            <form action="#" method="POST">
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="Asunto">
+                <textarea rows="5" placeholder="Mensaje"></textarea>
+                <button type="submit" class="btn-enviar">Enviar mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-contenido">
+            <div class="footer-copyright">
+                <p>© 2025 Marcel Luengas Photo</p>
+            </div>
+            <div class="footer-redes">
+                <a href="https://www.instagram.com/photoarchmarcel" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:photoarchmarcel@gmail.com" aria-label="Email">
+                    <i class="far fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Slideshow automático
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+            if (slides.length > 1) {
+                setInterval(() => {
+                    slides[currentSlide].classList.remove('active');
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    slides[currentSlide].classList.add('active');
+                }, 4000);
+            }
+        });
+    </script>
+</body>
+</html>

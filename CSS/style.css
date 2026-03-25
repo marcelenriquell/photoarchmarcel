@@ -1,0 +1,1202 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 40px;
+    z-index: 1000;
+    background: transparent;
+}
+
+/* Logo centrado */
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 60px;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 85px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.02);
+}
+
+/* Ícono menú hamburguesa */
+.menu-icon {
+    position: absolute;
+    left: 40px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.menu-icon:hover {
+    color: #ff6a00;
+}
+
+/* ========== MENÚ QUE SURGE DESDE ARRIBA CON CARRUSEL ========== */
+.nav-menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 70vh;
+    background: rgba(255, 255, 255, 0.699);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 999;
+    transition: top 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 60px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-menu.active {
+    top: 0;
+}
+
+/* Columna izquierda - opciones del menú */
+.nav-columna {
+    flex: 0.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-bottom: 28px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    transition-delay: calc(0.05s * var(--i, 0));
+    border-bottom: none;
+}
+
+.nav-menu.active .nav-links li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-item {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    text-transform: none;
+    transition: color 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    color: #ff6a00;
+}
+
+/* Redes sociales en la parte inferior izquierda */
+.menu-footer {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.menu-social {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.menu-social a {
+    color: #888;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.menu-social a:hover {
+    color: #ff6a00;
+}
+
+/* ========== CARRUSEL DE CATEGORÍAS CON HOVER ========== */
+.menu-carrusel {
+    flex: 1.3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 40px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
+.menu-carrusel::-webkit-scrollbar {
+    height: 4px;
+}
+
+.menu-carrusel::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.menu-carrusel::-webkit-scrollbar-thumb {
+    background: #ff6a00;
+    border-radius: 4px;
+}
+
+.carrusel-track {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* Tarjeta de categoría - estado normal */
+.carrusel-item {
+    flex-shrink: 0;
+    width: 160px;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    filter: brightness(0.7);
+    transform: scale(0.92);
+}
+
+.carrusel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.carrusel-item .item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 15px 10px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+/* Estado HOVER - se agranda la imagen seleccionada */
+.carrusel-item:hover {
+    filter: brightness(1);
+    transform: scale(1.08);
+    z-index: 10;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.carrusel-item:hover img {
+    transform: scale(1.05);
+}
+
+.carrusel-item:hover .item-overlay {
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
+/* Efecto de opacidad en los items no seleccionados al hacer hover en el track */
+.carrusel-track:hover .carrusel-item:not(:hover) {
+    filter: brightness(0.5);
+    transform: scale(0.88);
+}
+
+/* Overlay oscuro */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Botón de cerrar dentro del menú */
+.menu-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 22px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-close:hover {
+    color: #ff6a00;
+    background: white;
+}
+
+/* ========== BOTÓN CERRAR SUBCATEGORÍA ========== */
+.subcategoria-cerrar {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 24px;
+    font-weight: 300;
+    cursor: pointer;
+    z-index: 1501;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.subcategoria-cerrar.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.subcategoria-cerrar:hover {
+    background: #ff6a00;
+    transform: rotate(90deg);
+    border-color: #ff6a00;
+}
+
+/* ========== HERO ========== */
+.hero {
+    height: 1666px;
+    background-image: url(/Img/Portada.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.palabras {
+    margin-bottom: 150px;
+    color: white;
+    font-family: "Meow Script", script;
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+.palabras span {
+    margin: 0 20px;
+}
+
+.espacio-blanco {
+    height: 714px;
+    background-color: white;
+}
+
+/* ========== CATEGORIAS ========== */
+.categoria {
+    height: 1624px;
+    width: 100%;
+    background: linear-gradient(to bottom, white 0%, rgba(255,255,255,0) 15%, rgba(0,0,0,0.2) 80%, black 100%),
+                url(/Img/Narrativa\ Deportiva.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.categoria::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent, black);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.categoria-mascotas {
+    position: relative;
+}
+
+.categoria-imagen-mascotas {
+    height: 1624px;
+    background-image: url(/Img/Compañeros\ de\ Vida.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.categoria-imagen-mascotas::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.6));
+    pointer-events: none;
+    z-index: 2;
+}
+
+.categoria-espacios {
+    position: relative;
+}
+
+.categoria-imagen-espacios {
+    height: 1624px;
+    background-image: url(/Img/Espacios\ y\ ciudad.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.categoria-imagen-espacios::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.6));
+    pointer-events: none;
+    z-index: 2;
+}
+
+.categoria-retratos {
+    position: relative;
+}
+
+.categoria-imagen-retratos {
+    height: 1624px;
+    background-image: url(/Img/Retrato.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.categoria-imagen-retratos::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.6));
+    pointer-events: none;
+    z-index: 2;
+}
+
+.categoria-natural {
+    position: relative;
+}
+
+.categoria-imagen-natural {
+    height: 1624px;
+    background-image: url(/Img/Vida\ Natural.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.categoria-imagen-natural::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.6));
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* WRAPPER Y SUBCATEGORÍAS */
+.categoria-wrapper {
+    width: 100%;
+}
+
+.subcategoria,
+.subcategoria-mascotas,
+.subcategoria-espacios,
+.subcategoria-retratos,
+.subcategoria-natural {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.subcategoria.abierta,
+.subcategoria-mascotas.abierta,
+.subcategoria-espacios.abierta,
+.subcategoria-retratos.abierta,
+.subcategoria-natural.abierta {
+    max-height: 3000px;
+}
+
+/* SUBCATEGORÍA DEPORTES */
+.subcategoria-hero {
+    height: 815px;
+    width: 100%;
+    background-image: url(/Img/Portada\ Narrativa\ Deportiva.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 -20px 30px rgba(0, 0, 0, 0.3);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.45;
+}
+
+.texto-subcategoria {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    color: white;
+    max-width: 600px;
+}
+
+.texto-subcategoria h2 {
+    font-family: "Meow Script", serif;
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+.texto-subcategoria p {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* FILTROS */
+.filtros {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding: 40px 0;
+    background: white;
+}
+
+.filtros button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.filtros button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #ff6a00;
+    transition: 0.35s;
+}
+
+.filtros button:hover::after,
+.filtros button.activo::after {
+    width: 100%;
+}
+
+.filtros button.activo {
+    color: #ff6a00;
+}
+
+/* GALERÍA HORIZONTAL */
+.galeria-contenedor {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 0 40px;
+}
+
+.nav-btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 106, 0, 0.8);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn:hover {
+    background: #ff6a00;
+    transform: scale(1.1);
+}
+
+.nav-btn.prev { left: 20px; }
+.nav-btn.next { right: 20px; }
+
+.galeria-horizontal {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 40px 0;
+    background: white;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.galeria-horizontal::-webkit-scrollbar {
+    height: 6px;
+}
+
+.galeria-horizontal::-webkit-scrollbar-thumb {
+    background: #ccc;
+}
+
+.galeria-horizontal .img-wrapper {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.galeria-horizontal .img-wrapper img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+.galeria-horizontal .img-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, rgba(255, 106, 0, 0.25) 0%, rgba(200, 70, 0, 0.45) 50%, rgba(150, 50, 0, 0.35) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.galeria-horizontal .img-wrapper:hover::after {
+    opacity: 1;
+}
+
+.galeria-horizontal .img-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+/* PORTADAS */
+.portada-mascotas,
+.portada-espacios,
+.portada-retratos,
+.portada-natural {
+    height: 815px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 -20px 30px rgba(0, 0, 0, 0.4);
+}
+
+.portada-mascotas { background-image: url(/Img/Portada\ Compañeros\ de\ vida.jpg); }
+.portada-espacios { background-image: url(/Img/Portada\ Espacios\ \(2\).jpg); }
+.portada-retratos { background-image: url(/Img/Portada\ Retrato.jpg); }
+.portada-natural { background-image: url(/Img/Portada\ Vida\ Natural.jpg); }
+
+.overlay-mascotas,
+.overlay-espacios,
+.overlay-retratos,
+.overlay-natural {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.overlay-mascotas { align-items: flex-end; padding-right: 8%; text-align: right; }
+.overlay-espacios { align-items: flex-start; padding-left: 8%; text-align: left; }
+.overlay-retratos { align-items: center; text-align: center; }
+.overlay-natural { align-items: flex-start; padding-left: 8%; text-align: left; }
+
+.titulo-mascotas,
+.titulo-espacios,
+.titulo-retratos,
+.titulo-natural {
+    font-family: "Meow Script", serif;
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+.descripcion-mascotas,
+.descripcion-espacios,
+.descripcion-retratos,
+.descripcion-natural {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 500px;
+}
+
+/* GALERÍAS GRID */
+.galeria-mascotas,
+.galeria-espacios,
+.galeria-retratos,
+.galeria-natural {
+    background: #f2f2f2;
+    padding: 80px 8%;
+}
+
+.filtros-mascotas,
+.filtros-espacios,
+.filtros-retratos,
+.filtros-natural {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    font-family: "Raleway", sans-serif;
+    flex-wrap: wrap;
+}
+
+.filtros-mascotas span,
+.filtros-espacios span,
+.filtros-retratos span,
+.filtros-natural span {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.filtros-mascotas span::after,
+.filtros-espacios span::after,
+.filtros-retratos span::after,
+.filtros-natural span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #ff6a00;
+    transition: 0.35s;
+}
+
+.filtros-mascotas span:hover::after,
+.filtros-espacios span:hover::after,
+.filtros-retratos span:hover::after,
+.filtros-natural span:hover::after {
+    width: 100%;
+}
+
+.filtros-mascotas .activo,
+.filtros-espacios .activo,
+.filtros-retratos .activo,
+.filtros-natural .activo {
+    color: #ff6a00;
+    opacity: 1;
+}
+
+.filtros-mascotas .activo::after,
+.filtros-espacios .activo::after,
+.filtros-retratos .activo::after,
+.filtros-natural .activo::after {
+    width: 100%;
+}
+
+.grid-mascotas,
+.grid-espacios,
+.grid-retratos,
+.grid-natural {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.grid-mascotas .img-wrapper-grid,
+.grid-espacios .img-wrapper-grid,
+.grid-retratos .img-wrapper-grid,
+.grid-natural .img-wrapper-grid {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    aspect-ratio: 1 / 1;
+}
+
+.grid-mascotas .img-wrapper-grid img,
+.grid-espacios .img-wrapper-grid img,
+.grid-retratos .img-wrapper-grid img,
+.grid-natural .img-wrapper-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+.grid-mascotas .img-wrapper-grid::after,
+.grid-espacios .img-wrapper-grid::after,
+.grid-retratos .img-wrapper-grid::after,
+.grid-natural .img-wrapper-grid::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, rgba(255, 106, 0, 0.25) 0%, rgba(200, 70, 0, 0.45) 50%, rgba(150, 50, 0, 0.35) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.grid-mascotas .img-wrapper-grid:hover::after,
+.grid-espacios .img-wrapper-grid:hover::after,
+.grid-retratos .img-wrapper-grid:hover::after,
+.grid-natural .img-wrapper-grid:hover::after {
+    opacity: 1;
+}
+
+.grid-mascotas .img-wrapper-grid:hover img,
+.grid-espacios .img-wrapper-grid:hover img,
+.grid-retratos .img-wrapper-grid:hover img,
+.grid-natural .img-wrapper-grid:hover img {
+    transform: scale(1.05);
+}
+
+/* CURSOR PREVIEW */
+.categoria,
+.categoria-mascotas,
+.categoria-espacios,
+.categoria-retratos,
+.categoria-natural {
+    cursor: none;
+}
+
+.cursor-preview {
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cursor-preview.visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.cursor-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.cursor-preview::after {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 32px;
+    font-weight: 300;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* LIGHTBOX */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+/* FOOTER */
+.footer {
+    background: transparent;
+    padding: 40px 8%;
+    font-family: 'Raleway', sans-serif;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-copyright p {
+    color: #666;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.footer-redes {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-redes a {
+    color: #333;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-redes a:hover {
+    color: #ff6a00;
+    transform: translateY(-2px);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+    .grid-mascotas, .grid-espacios, .grid-retratos, .grid-natural {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .cursor-preview {
+        width: 100px;
+        height: 100px;
+    }
+    .nav-menu {
+        padding: 30px 40px;
+    }
+    .nav-item {
+        font-size: 20px;
+    }
+    .carrusel-item {
+        width: 140px;
+        height: 175px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px 25px;
+    }
+    
+    .logo {
+        margin-top: 40px;
+    }
+    
+    .logo img {
+        width: 70px;
+    }
+    
+    .menu-icon {
+        left: 20px;
+        font-size: 24px;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        height: auto;
+        min-height: 80vh;
+        padding: 80px 30px 40px;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    
+    .nav-columna {
+        width: 100%;
+        flex: none;
+    }
+    
+    .nav-links {
+        text-align: center;
+    }
+    
+    .nav-links li {
+        margin-bottom: 20px;
+    }
+    
+    .nav-item {
+        font-size: 20px;
+    }
+    
+    .menu-footer {
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    .menu-social {
+        justify-content: center;
+    }
+    
+    .menu-carrusel {
+        width: 100%;
+        padding-left: 0;
+        margin-top: 30px;
+        overflow-x: auto;
+    }
+    
+    .carrusel-track {
+        padding: 10px;
+    }
+    
+    .carrusel-item {
+        width: 130px;
+        height: 165px;
+    }
+    
+    .menu-close {
+        top: 20px;
+        right: 20px;
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+    
+    .subcategoria-cerrar {
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .grid-mascotas, .grid-espacios, .grid-retratos, .grid-natural {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .texto-subcategoria h2, .titulo-mascotas, .titulo-espacios, .titulo-retratos, .titulo-natural {
+        font-size: 36px;
+    }
+    
+    .texto-subcategoria p, .descripcion-mascotas, .descripcion-espacios, .descripcion-retratos, .descripcion-natural {
+        font-size: 14px;
+    }
+    
+    .cursor-preview {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .cursor-preview::after {
+        font-size: 24px;
+    }
+    
+    .footer {
+        padding: 30px 5%;
+    }
+    
+    .footer-contenido {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .footer-redes {
+        gap: 30px;
+    }
+    
+    .footer-redes a {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .logo {
+        margin-top: 30px;
+    }
+    
+    .logo img {
+        width: 60px;
+    }
+    
+    .menu-icon {
+        left: 15px;
+        font-size: 22px;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .nav-item {
+        font-size: 16px;
+    }
+    
+    .menu-social {
+        gap: 20px;
+    }
+    
+    .menu-social a {
+        font-size: 11px;
+    }
+    
+    .carrusel-item {
+        width: 110px;
+        height: 140px;
+    }
+    
+    .subcategoria-cerrar {
+        top: 15px;
+        right: 15px;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+    
+    .grid-mascotas, .grid-espacios, .grid-retratos, .grid-natural {
+        grid-template-columns: 1fr;
+    }
+    
+    .cursor-preview {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (hover: none) {
+    .categoria, .categoria-mascotas, .categoria-espacios, .categoria-retratos, .categoria-natural {
+        cursor: default;
+    }
+    .cursor-preview {
+        display: none;
+    }
+}

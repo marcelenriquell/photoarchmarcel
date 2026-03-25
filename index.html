@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcel Luengas Photo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Meow+Script&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo png blanco.png" alt="Marcel Luengas">
+            </a>
+        </div>
+        <nav class="nav-menu">
+            <div class="nav-columna">
+                <ul class="nav-links">
+                    <li style="--i:0">
+                        <a href="index.html" class="nav-item active">Inicio</a>
+                    </li>
+                    <li style="--i:1">
+                        <a href="about.html" class="nav-item">Acerca de</a>
+                    </li>
+                    <li style="--i:2">
+                        <a href="contacto.html" class="nav-item">Contacto</a>
+                    </li>
+                    <li style="--i:3">
+                        <a href="#" class="nav-item">Tienda</a>
+                    </li>
+                </ul>
+                <div class="menu-footer">
+                    <div class="menu-social">
+                        <a href="https://www.instagram.com/photoarchmarcel" target="_blank">Instagram</a>
+                        <a href="https://wa.me/573115912928" target="_blank">WhatsApp</a>
+                        <a href="mailto:photoarchmarcel@gmail.com">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-carrusel">
+                <div class="carrusel-track" id="carruselTrack">
+                    <div class="carrusel-item" data-categoria="deportes">
+                        <img src="Img/Narrativa Deportiva.jpg" alt="Narrativa Deportiva">
+                        <div class="item-overlay">Narrativa Deportiva</div>
+                    </div>
+                    <div class="carrusel-item" data-categoria="mascotas">
+                        <img src="Img/Compañeros de Vida.jpg" alt="Compañeros de Vida">
+                        <div class="item-overlay">Compañeros de Vida</div>
+                    </div>
+                    <div class="carrusel-item" data-categoria="espacios">
+                        <img src="Img/Espacios y ciudad.jpg" alt="Espacios y Ciudad">
+                        <div class="item-overlay">Espacios y Ciudad</div>
+                    </div>
+                    <div class="carrusel-item" data-categoria="retratos">
+                        <img src="Img/Retrato.jpg" alt="Retratos">
+                        <div class="item-overlay">Retratos</div>
+                    </div>
+                    <div class="carrusel-item" data-categoria="natural">
+                        <img src="Img/Vida Natural.jpg" alt="Vida Natural">
+                        <div class="item-overlay">Vida Natural</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO / PORTADA -->
+    <section class="hero">
+        <div class="palabras">
+            <span>Composición</span>
+            <span>Luz</span>
+            <span>Espacio</span>
+        </div>
+    </section>
+
+    <section class="espacio-blanco"></section>
+   
+    <!-- ==================== CATEGORÍA 1: DEPORTES ==================== -->
+    <div class="categoria-wrapper">
+        <section id="deportes" class="categoria" data-categoria="deportes"></section>
+        <div class="subcategoria" id="sub-deportes">
+            <div class="subcategoria-hero">
+                <div class="overlay"></div>
+                <div class="texto-subcategoria">
+                    <h2>Narrativa Visual Deportiva</h2>
+                    <p>Donde el esfuerzo se vuelve historia y la pasión encuentra su imagen. Capturo la intensidad del momento, la emoción del atleta y la energía del movimiento.</p>
+                </div>
+            </div>
+            <div class="subcategoria-contenido">
+                <div class="filtros">
+                    <button class="activo">Todas</button>
+                    <button>Equipo</button>
+                    <button>Acción</button>
+                </div>
+                <div class="galeria-contenedor">
+                    <button class="nav-btn prev">&#10094;</button>
+                    <div class="galeria-horizontal">
+                        <div class="img-wrapper"><img src="Img/F1.jpg" alt="Deporte 1"></div>
+                        <div class="img-wrapper"><img src="Img/F2.jpg" alt="Deporte 2"></div>
+                        <div class="img-wrapper"><img src="Img/F3.jpg" alt="Deporte 3"></div>
+                        <div class="img-wrapper"><img src="Img/F4.jpg" alt="Deporte 4"></div>
+                        <div class="img-wrapper"><img src="Img/F5.jpg" alt="Deporte 5"></div>
+                        <div class="img-wrapper"><img src="Img/F6.jpg" alt="Deporte 6"></div>
+                        <div class="img-wrapper"><img src="Img/F7.jpg" alt="Deporte 7"></div>
+                        <div class="img-wrapper"><img src="Img/F8.jpg" alt="Deporte 8"></div>
+                        <div class="img-wrapper"><img src="Img/F9.jpg" alt="Deporte 9"></div>
+                        <div class="img-wrapper"><img src="Img/F10.jpg" alt="Deporte 10"></div>
+                        <div class="img-wrapper"><img src="Img/F11.jpg" alt="Deporte 11"></div>
+                        <div class="img-wrapper"><img src="Img/F12.jpg" alt="Deporte 12"></div>
+                        <div class="img-wrapper"><img src="Img/F13.jpg" alt="Deporte 13"></div>
+                        <div class="img-wrapper"><img src="Img/F14.jpg" alt="Deporte 14"></div>
+                        <div class="img-wrapper"><img src="Img/F15.jpg" alt="Deporte 15"></div>
+                        <div class="img-wrapper"><img src="Img/F16.jpg" alt="Deporte 16"></div>
+                    </div>
+                    <button class="nav-btn next">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CATEGORÍA 2: MASCOTAS ==================== -->
+    <div class="categoria-wrapper">
+        <section id="mascotas" class="categoria-mascotas" data-categoria="mascotas">
+            <div class="categoria-imagen-mascotas"></div>
+        </section>
+        <div class="subcategoria-mascotas" id="sub-mascotas">
+            <div class="portada-mascotas">
+                <div class="overlay-mascotas">
+                    <h2 class="titulo-mascotas">Compañeros de Vida</h2>
+                    <p class="descripcion-mascotas">Retratos que preservan vínculo, carácter y presencia. La mirada sincera, la lealtad incondicional y la alegría compartida.</p>
+                </div>
+            </div>
+            <div class="galeria-mascotas">
+                <div class="filtros-mascotas">
+                    <span class="activo">Todas</span>
+                    <span>Vínculo</span>
+                    <span>Retrato</span>
+                    <span>Exterior</span>
+                    <span>Adopción</span>
+                </div>
+                <div class="grid-mascotas">
+                    <div class="img-wrapper-grid"><img src="img/C1.jpg" alt="Mascota 1"></div>
+                    <div class="img-wrapper-grid"><img src="img/C2.jpg" alt="Mascota 2"></div>
+                    <div class="img-wrapper-grid"><img src="img/C3.jpg" alt="Mascota 3"></div>
+                    <div class="img-wrapper-grid"><img src="img/C4.jpg" alt="Mascota 4"></div>
+                    <div class="img-wrapper-grid"><img src="img/C5.jpg" alt="Mascota 5"></div>
+                    <div class="img-wrapper-grid"><img src="img/C6.jpg" alt="Mascota 6"></div>
+                    <div class="img-wrapper-grid"><img src="img/C7.JPEG" alt="Mascota 7"></div>
+                    <div class="img-wrapper-grid"><img src="img/C8.jpg" alt="Mascota 8"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CATEGORÍA 3: ESPACIOS Y CIUDAD ==================== -->
+    <div class="categoria-wrapper">
+        <section id="espacios" class="categoria-espacios" data-categoria="espacios">
+            <div class="categoria-imagen-espacios"></div>
+        </section>
+        <div class="subcategoria-espacios" id="sub-espacios">
+            <div class="portada-espacios">
+                <div class="overlay-espacios">
+                    <h2 class="titulo-espacios">Espacios y Ciudad</h2>
+                    <p class="descripcion-espacios">Arquitectura y fotografía como un mismo lenguaje. Me interesa cómo la luz transforma el espacio y cómo el tiempo modifica la percepción.</p>
+                </div>
+            </div>
+            <div class="galeria-espacios">
+                <div class="filtros-espacios">
+                    <span class="activo">Todas</span>
+                    <span>Arquitectura</span>
+                    <span>Interior</span>
+                    <span>Ciudad</span>
+                    <span>Detalle</span>
+                </div>
+                <div class="grid-espacios">
+                    <div class="img-wrapper-grid"><img src="img/E1.jpg" alt="Espacio 1"></div>
+                    <div class="img-wrapper-grid"><img src="img/E2.jpg" alt="Espacio 2"></div>
+                    <div class="img-wrapper-grid"><img src="img/E3.jpg" alt="Espacio 3"></div>
+                    <div class="img-wrapper-grid"><img src="img/E4.jpg" alt="Espacio 4"></div>
+                    <div class="img-wrapper-grid"><img src="img/E5.jpg" alt="Espacio 5"></div>
+                    <div class="img-wrapper-grid"><img src="img/E6.jpg" alt="Espacio 6"></div>
+                    <div class="img-wrapper-grid"><img src="img/E7.jpg" alt="Espacio 7"></div>
+                    <div class="img-wrapper-grid"><img src="img/E8.jpg" alt="Espacio 8"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CATEGORÍA 4: RETRATOS ==================== -->
+    <div class="categoria-wrapper">
+        <section id="retratos" class="categoria-retratos" data-categoria="retratos">
+            <div class="categoria-imagen-retratos"></div>
+        </section>
+        <div class="subcategoria-retratos" id="sub-retratos">
+            <div class="portada-retratos">
+                <div class="overlay-retratos">
+                    <h2 class="titulo-retratos">Retratos</h2>
+                    <p class="descripcion-retratos">La esencia de la persona, la mirada que revela. Retratos que cuentan historias, que muestran autenticidad y carácter.</p>
+                </div>
+            </div>
+            <div class="galeria-retratos">
+                <div class="filtros-retratos">
+                    <span class="activo">Todas</span>
+                    <span>Personal</span>
+                    <span>Profesional</span>
+                    <span>Artístico</span>
+                    <span>Espontáneo</span>
+                </div>
+                <div class="grid-retratos">
+                    <div class="img-wrapper-grid"><img src="img/R1.jpg" alt="Retrato 1"></div>
+                    <div class="img-wrapper-grid"><img src="img/R2.jpg" alt="Retrato 2"></div>
+                    <div class="img-wrapper-grid"><img src="img/R3.jpg" alt="Retrato 3"></div>
+                    <div class="img-wrapper-grid"><img src="img/R4.jpg" alt="Retrato 4"></div>
+                    <div class="img-wrapper-grid"><img src="img/R5.jpg" alt="Retrato 5"></div>
+                    <div class="img-wrapper-grid"><img src="img/R6.jpg" alt="Retrato 6"></div>
+                    <div class="img-wrapper-grid"><img src="img/R7.jpg" alt="Retrato 7"></div>
+                    <div class="img-wrapper-grid"><img src="img/R8.jpg" alt="Retrato 8"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CATEGORÍA 5: VIDA NATURAL ==================== -->
+    <div class="categoria-wrapper">
+        <section id="natural" class="categoria-natural" data-categoria="natural">
+            <div class="categoria-imagen-natural"></div>
+        </section>
+        <div class="subcategoria-natural" id="sub-natural">
+            <div class="portada-natural">
+                <div class="overlay-natural">
+                    <h2 class="titulo-natural">Vida Natural</h2>
+                    <p class="descripcion-natural">La belleza salvaje, el equilibrio de la naturaleza. Capturo paisajes, fauna y momentos efímeros que la naturaleza nos regala.</p>
+                </div>
+            </div>
+            <div class="galeria-natural">
+                <div class="filtros-natural">
+                    <span class="activo">Todas</span>
+                    <span>Paisajes</span>
+                    <span>Fauna</span>
+                    <span>Flora</span>
+                </div>
+                <div class="grid-natural">
+                    <div class="img-wrapper-grid"><img src="img/N1.jpg" alt="Naturaleza 1"></div>
+                    <div class="img-wrapper-grid"><img src="img/N2.jpg" alt="Naturaleza 2"></div>
+                    <div class="img-wrapper-grid"><img src="img/N3.jpg" alt="Naturaleza 3"></div>
+                    <div class="img-wrapper-grid"><img src="img/N4.jpg" alt="Naturaleza 4"></div>
+                    <div class="img-wrapper-grid"><img src="img/N5.jpg" alt="Naturaleza 5"></div>
+                    <div class="img-wrapper-grid"><img src="img/N6.jpg" alt="Naturaleza 6"></div>
+                    <div class="img-wrapper-grid"><img src="img/N7.jpg" alt="Naturaleza 7"></div>
+                    <div class="img-wrapper-grid"><img src="img/N8.jpg" alt="Naturaleza 8"></div>
+                    <div class="img-wrapper-grid"><img src="img/N9.jpg" alt="Naturaleza 9"></div>
+                    <div class="img-wrapper-grid"><img src="img/N10.jpg" alt="Naturaleza 10"></div>
+                    <div class="img-wrapper-grid"><img src="img/N11.jpg" alt="Naturaleza 11"></div>
+                    <div class="img-wrapper-grid"><img src="img/N12.jpg" alt="Naturaleza 12"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-contenido">
+            <div class="footer-copyright">
+                <p>© 2025 Marcel Luengas Photo</p>
+            </div>
+            <div class="footer-redes">
+                <a href="https://www.instagram.com/photoarchmarcel" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:photoarchmarcel@gmail.com" aria-label="Email">
+                    <i class="far fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
